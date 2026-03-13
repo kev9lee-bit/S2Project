@@ -74,3 +74,11 @@ std::string Board::render() const
 	out << " a b c d e f g h\n";
 	return out.str();
 }
+
+bool movePiece(const Move& m){
+Piece* p = grid_[m.r][m.c];
+if (p == nullptr) return false;
+if (!p -> canmoveShape(*this, m )) return false;
+Piece* target = grid_[m.tr][m.tc];
+if (target != nullptr && target -> isWhite() == p -> isWhite()) return false;
+}

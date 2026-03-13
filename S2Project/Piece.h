@@ -13,5 +13,6 @@ public:
 	bool isWhite() const { return white_; }
 	//Pure virtual function which must be implemented by derived classes to get the symbol of the piece
 	virtual char symbol() const = 0;
+    //Every piece MUST define its own movement rule
 	virtual bool canMoveShape(const Board&, const Move& m) const = 0;
 };
